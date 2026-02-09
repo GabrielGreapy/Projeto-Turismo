@@ -1,11 +1,11 @@
 from playwright_stealth.stealth import Stealth
 
-def stealth_mode(page):
+def stealth_mode(pagina):
     try:
         stealth_obj = Stealth()
         print("Classe de stealth criada")
         try: 
-            stealth_obj.use_sync(page)
+            stealth_obj.use_sync(pagina)
         except Exception as e:
             print(" Erro ao tentar implementar o metodo stealth no navegador: \n {e}")
     except Exception as e:
