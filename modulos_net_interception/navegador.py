@@ -5,7 +5,7 @@ def criar_navegador(p):
     print("Criando navegador: ...")
     try:
         navegador = p.chromium.launch(headless=False)
-        contexto = navegador.new_context()
+        contexto = navegador.new_context(locale="pt-BR")
         pagina = contexto.new_page()            
         stealth_mode(pagina)
         print("Tudo deu certo")
@@ -22,3 +22,5 @@ def fechar_navegador(navegador, p):
         print("Navegador fechado")
     except Exception as e:
         print(f"Erro ao tentar fechar o navegador: \n {e}" )
+
+
