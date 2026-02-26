@@ -1,6 +1,6 @@
 from playwright.sync_api import sync_playwright
-from modulos_net_interception.navegador import criar_navegador, fechar_navegador
-from modulos_net_interception.interceptador import interceptando_url
+from modulos_net_interception.navegador import criar_navegador, fechar_navegador, visitar_avaliações_googlemaps
+
 
 
 def main():
@@ -12,13 +12,10 @@ def main():
         
         navegador, pagina = criar_navegador(p)
         
-        pagina.route("**/listreviews/**", interceptando_url)
-        print("Grampo colocado")
-        print("Indo ao link alvo")
         
-        pagina.goto(url)
-        print("Link visitado")
-        
+        visitar_avaliações_googlemaps(pagina, url, p)
+    
+        pagina.wait_for_timeout(20000)
         
         
         fechar_navegador(navegador, p)
