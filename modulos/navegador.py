@@ -1,5 +1,5 @@
 from .config_stealth import stealth_mode
-
+from .capturador import capturar_aba_avaliacoes
 
 def criar_navegador(p):
     print("Criando navegador: ...")
@@ -28,7 +28,12 @@ def fechar_navegador(navegador, p):
         
 def visitar_avaliações_googlemaps( pagina, url, p):
     for i in range(2):
+        pagina.wait_for_timeout(2000)
         pagina.goto(url)
+    print("Reload feito")
+    aba_avaliacoes = capturar_aba_avaliacoes(pagina)
+    
+    
     
 
 

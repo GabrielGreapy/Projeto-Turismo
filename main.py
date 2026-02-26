@@ -1,5 +1,5 @@
 from playwright.sync_api import sync_playwright
-from modulos_net_interception.navegador import criar_navegador, fechar_navegador, visitar_avaliações_googlemaps
+from modulos.navegador import criar_navegador, fechar_navegador, visitar_avaliações_googlemaps
 
 
 
